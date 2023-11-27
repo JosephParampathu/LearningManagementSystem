@@ -35,3 +35,53 @@ window.onload = function() {
     }
   }
 }
+
+//Function to control quiz modules
+
+function getResults1() {
+  var amountCorrect = 0;
+
+  for (var i = 1; i <= 3; i++) {
+    var radiosName = document.getElementsByName('answer' +i);
+
+  for (var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if (radiosValue.checked) {
+      if (radiosValue.value == "correct") {
+        amountCorrect++;
+        radiosValue.nextSibling.style.color = "green";
+      } else {
+        radiosValue.nextSibling.style.color = "red";
+      }
+    } else {
+      radiosValue.nextSibling.style.color = "";
+    }
+  }
+
+    }
+  document.getElementById('results1').innerHTML = "Correct Answers: " + amountCorrect
+}
+
+function getResults2() {
+  var amountCorrect = 0;
+
+  for (var i = 4; i <= 6; i++) {
+    var radiosName = document.getElementsByName('answer' +i);
+
+  for (var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if (radiosValue.checked) {
+      if (radiosValue.value == "correct") {
+        amountCorrect++;
+        radiosValue.nextSibling.style.color = "green";
+      } else {
+        radiosValue.nextSibling.style.color = "red";
+      }
+    } else {
+      radiosValue.nextSibling.style.color = "";
+    }
+  }
+
+    }
+  document.getElementById('results2').innerHTML = "Correct Answers: " + amountCorrect
+}
